@@ -1,0 +1,19 @@
+ ---
+ - name: Create iaac file
+    hosts: iaas
+    sudo: True
+    tasks: invoke the role for /etc/iaac
+      include_role: 
+        name: create_file
+ 
+  - name: Get file content
+    hosts: all
+    sudo: True
+
+   roles:
+    - define_content
+
+  tasks:
+    - name: print variables
+      debug: 
+        msg: "Server {{ansible_host}} has the following content: {{['content']}} "
