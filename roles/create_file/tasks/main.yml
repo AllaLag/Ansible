@@ -1,0 +1,6 @@
+# Install and configure build tools.
+
+- name: creating an empty file
+  yum: name=iaac
+        root = etc
+       state=present

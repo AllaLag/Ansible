@@ -1,0 +1,6 @@
+# Define content of /etc/issue as variable
+
+- name: define contect as variable
+  yum: name=issue
+        root = etc
+       state=present
